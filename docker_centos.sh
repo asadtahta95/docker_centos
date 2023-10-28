@@ -1,12 +1,16 @@
+# Install Docker On CentOS by AsadTh95 
+
+
 # Update packages
 yum update -y
+
 # Install Docker
 # Add repo
-dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 # remove podman dan buildah
-dnf remove podman buildah
+yum remove podman buildah -y
 # Install packages Docker
-dnf install docker-ce docker-ce-cli containerd.io
+yum install docker-ce docker-ce-cli containerd.io -y
 # Enable & start docker service
 systemctl start docker.service
 systemctl enable docker.service
